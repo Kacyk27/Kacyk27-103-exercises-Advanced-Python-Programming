@@ -5,9 +5,9 @@ def compress(thing):
     key_func = lambda x: x[0]
     iterator=itertools.groupby(str(thing),key_func)
     for key,group in iterator:
-        key_and_group = (key, len(list(group)))
+        key_and_group = f"{key}{len(list(group))}"
         comp_list.append(key_and_group)
 
-
-    return comp_list
-print(compress(1112))
+    result="_".join(comp_list)
+    return result
+print(compress(11122000))
